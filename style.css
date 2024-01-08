@@ -317,6 +317,36 @@ nav label{
     }
 }
 
+@media (max-width: 375px){
+    .container-home img{
+        height: 203px;
+        width: 80%;
+    }
+    .container-home h1{
+        width: 80%;
+        text-align: center;
+        font-size: 18px;
+    }
+    hr.split{
+        width: 200px;
+    }
+    .container-about .text{
+        align-items: center;
+    }
+    .container-about .text p{
+        width: 400px;
+    }
+    .container-projects .card{
+        width: 400px;
+        margin: 20px 0px;
+    }
+    .container-contact form{
+        width: 300px;
+    }
+    .container-contact form input, .container-contact form textarea{
+        box-sizing: border-box;
+    }
+}
 
 
 
