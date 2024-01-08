@@ -1,0 +1,322 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background: lightblue;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+nav .right-side{
+    display: flex;
+}
+
+nav .left-side a h1{
+    color: #444;   
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav .right-side .nav-link-wrapper a{
+    display: block;
+    color: white;
+    padding: 20px 30px;
+    font-size: 15px;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #eaeaea;
+    padding: 95px 0px 25px 0px;
+}
+
+.container-home img{
+    border-radius: 50%;
+    width: 420px;
+    height: 420px;
+}
+
+.container-home h1{
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.container-home p{
+    font-size: 20px;
+}
+
+.container-about{
+    padding: 100px 0px 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr.split{
+    width: 300px;
+    height: 2px;
+    background: black;
+    margin: 10px 0px;
+}
+
+.container-about .text{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.container-about .text p{
+    width: 500px;
+    margin: 0px 40px;
+    font-size: 18px;
+}
+
+.container-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #eaeaea;
+    padding: 100px 0px;
+}
+
+.container-projects .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-projects .card{
+    width: 350px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+.container-projects .card img{
+    width: 100%;
+}
+
+.container-projects .card p{
+    color: black;
+    padding: 10px;
+}
+
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0px;
+}
+
+.container-contact form{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-contact form label{
+    margin-top: 10px;
+}
+
+.container-contact form input{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.container-contact form textarea{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.container-contact form button{
+    width: 70px;
+    background: lightblue;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: lightblue;
+    margin-top: 10px;
+}
+
+.container-contact form button:hover{
+    width: 70px;
+    background: rgb(235, 75, 181);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: rgb(235, 75, 181);
+    margin-top: 10px;
+}
+
+footer{
+    background: lightblue;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+body > input{
+    visibility: hidden;
+    position: absolute;
+}
+nav label{
+    display: none;
+}
+
+@media (max-width: 1200px){
+    .container-about .text{
+        flex-direction: column;
+        margin: 0px;
+    }
+    .container-about .text p{
+        width: 900px;
+        margin: 10px 0px;
+    }
+    .container-projects .card{
+        width: 450px;
+        margin: 20px 0px;
+    }
+}
+
+@media (max-width: 992px){
+    nav .right-side .nav-link-wrapper a{
+        padding: 20px 15px;
+    }
+    .container-about .text p{
+        width: 700px;
+    }
+    .container-projects .cards{
+        flex-direction: column;
+    }
+    .container-projects .card{
+        width: 700px;
+        margin: 20px 0px;
+    }
+    .container-contact form{
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px){
+    nav .right-side{
+        display: none;
+    }
+    nav .hamburger, nav .cross{
+        display: block;
+        padding: 17px 0px;
+        cursor: pointer;
+    }
+    nav .hamburger span{
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 6px;
+    }
+    nav .cross span:nth-child(1){
+        display: block;
+        width: 30px;
+        height: 4px;
+        transform-origin: 0 50%;
+        transform: rotate(45deg);
+        margin-top: -2px;
+        background: red;
+    }
+    nav .cross span:nth-child(2){
+        display: block;
+        width: 30px;    
+        height: 4px;
+        transform-origin: 0 50%;
+        transform: rotate(-45deg);
+        margin-top: 17px;
+        background: red;
+    }
+    input#open:checked ~ nav .hamburger{
+        display: none;
+    }
+    input#close:checked ~ nav .cross{
+        display: none;
+    }
+    input#open:checked ~ nav .right-side{
+        display: flex;
+        position: fixed;
+        top: 57.2px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .container-about .text{
+        align-items: center;
+    }
+    .container-about .text p{
+        width: 600px;
+    }
+    .container-projects .card{
+        width: 600px;
+        margin: 20px 0px;
+    }
+    .container-contact form{
+        width: 600px;
+    }
+    .container-contact form input, .container-contact form textarea{
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width 576px){
+    .container-home img{
+        height: 203px;
+        width: 95%;
+    }
+    .container-home h1{
+        width: 95%;
+        text-align: center;
+        font-size: 18px;
+    }
+    hr.split{
+        width: 200px;
+    }
+    .container-about .text{
+        align-items: center;
+    }
+    .container-about .text p{
+        width: 400px;
+    }
+    .container-projects .card{
+        width: 400px;
+        margin: 20px 0px;
+    }
+    .container-contact form{
+        width: 300px;
+    }
+    .container-contact form input, .container-contact form textarea{
+        box-sizing: border-box;
+    }
+}
+
+
+
+
